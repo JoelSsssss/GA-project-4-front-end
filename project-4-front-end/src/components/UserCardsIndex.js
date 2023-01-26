@@ -10,6 +10,7 @@ export default function UserCardsIndex() {
     API.GET(API.ENDPOINTS.getAllUserCards)
       .then(({ data }) => {
         setUserCards(data);
+        console.log(data);
       })
       .catch(({ message, response }) => {
         console.error(message, response);
@@ -27,7 +28,7 @@ export default function UserCardsIndex() {
             <Grid item xs={12} sm={12} md={4}></Grid>
             <Grid item xs={12} sm={12} md={8}>
               <Grid container spacing={2}>
-                {userCards.map((userCards) => (
+                {userCards?.map((userCards) => (
                   <Grid item sm={12} md={4} key={userCards._id}></Grid>
                 ))}
               </Grid>

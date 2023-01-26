@@ -25,7 +25,7 @@ export default function Navbar() {
               component='div'
               sx={{ mr: 2 }}
             >
-              Home
+              Home Page
             </Typography>
           </Link>
           <Link to='/usercards'>
@@ -35,7 +35,7 @@ export default function Navbar() {
               component='div'
               sx={{ mr: 2 }}
             >
-              Usercards
+              User Made Cards
             </Typography>
           </Link>
           <Link to='/templates'>
@@ -46,6 +46,27 @@ export default function Navbar() {
               sx={{ mr: 2 }}
             >
               Templates
+            </Typography>
+          </Link>
+          <Link to='/usercards/create'>
+            <Typography
+              variant='h6'
+              color='inherit'
+              component='div'
+              sx={{ mr: 2 }}
+            >
+              Create Your Own card
+            </Typography>
+          </Link>
+
+          <Link to='/auth/login/'>
+            <Typography
+              variant='h6'
+              color='inherit'
+              component='div'
+              sx={{ mr: 2, color: 'black' }}
+            >
+              Login
             </Typography>
           </Link>
           {/* {AUTH.getPayload().isAdmin && (
