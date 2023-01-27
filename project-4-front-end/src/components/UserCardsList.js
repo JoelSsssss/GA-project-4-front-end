@@ -1,7 +1,10 @@
+import React from 'react';
+import '../styles/CardsIndex.scss';
+
 import { useEffect, useState } from 'react';
 import { API } from '../lib/api';
 
-import { Container, Grid } from '@mui/material';
+import { Button, Container, Grid } from '@mui/material';
 
 import UserCardsCard from './common/UserCardsCard';
 
@@ -20,38 +23,45 @@ function UsercardsList() {
   }, []);
 
   return (
-    <>
-      <section className='UserCardsIndexSection'>
-        <Container
-          maxwith='lg'
-          sx={{ display: 'flex', flexDirection: 'column' }}
-        >
-          <Container
-            maxwith='lg'
-            sx={{ display: 'flex', justifyContent: 'space-around' }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={12} md={4}></Grid>
-              <Grid item xs={12} sm={12} md={8}>
-                <Grid container spacing={2}>
-                  {userCards?.map((userCards) => (
-                    <Grid item sm={12} md={4} key={userCards._id}>
-                      <UserCardsCard
-                        name={userCards.name}
-                        image={userCards.image}
-                        type={userCards.template}
-                        id={userCards._id}
-                      />
-                    </Grid>
-                  ))}
-                </Grid>
-              </Grid>
-            </Grid>
-          </Container>
-        </Container>
-      </section>
-      <p>user cards list</p>;
-    </>
+    <div className='the-card-index'>
+      {userCards?.map((userCards) => (
+        <Grid item sm={12} md={4} key={userCards._id}>
+          <div className='list-of-cards'>
+            <UserCardsCard
+              name={userCards.name}
+              image={userCards.image}
+              template={userCards.template}
+              id={userCards._id}
+            />
+            {/* <button
+              className='deletebutton'
+              onClick={() => {
+                API.DELETE(
+                  API.ENDPOINTS.deleteUsercard(userCards._id),
+                  API.getHeaders()
+                )
+                  .then(() => {
+                    console.log('deleted successfully');
+                  })
+                  .then(() =>
+                    API.GET(API.ENDPOINTS.getAllUserCards)
+                      .then(({ data }) => {
+                        setUserCards(data);
+                      })
+                      .catch(({ message, response }) => {
+                        console.error(message, response);
+                      })
+                  )
+                  .catch((e) => console.log(e));
+              }}
+            >
+              {' '}
+              Delete{' '}
+            </button> */}
+          </div>
+        </Grid>
+      ))}
+    </div>
   );
 }
 

@@ -1,10 +1,14 @@
+import React from 'react';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from '../lib/api';
 import { AUTH } from '../lib/auth';
 import { useAuthenticated } from '../hook/useAuthenticated';
-import { Container } from '@mui/system';
-import { Button, TextField } from '@mui/material';
+// import { Container } from '@mui/system';
+// import { Button, TextField } from '@mui/material';
+import construction from '../assets/construction.png';
+import '../styles/Login.scss';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -37,8 +41,15 @@ export default function Login() {
   // const navigateToRegister = () => navigate('/register');
 
   return (
-    <section className='LoginRegister'>
-      <Container
+    <>
+      <div className='background'>
+        <section className='Login'>
+          <img
+            className='construction-image'
+            src={construction}
+            alt='page under maintinace'
+          />
+          {/* <Container
         maxWidth='lg'
         sx={{
           display: 'flex',
@@ -85,8 +96,10 @@ export default function Login() {
           {/* <Button onClick={navigateToRegister}>
             Not Registered? Register here
           </Button> */}
-        </form>
-      </Container>
-    </section>
+          {/* </form>
+      </Container> */}
+        </section>
+      </div>
+    </>
   );
 }

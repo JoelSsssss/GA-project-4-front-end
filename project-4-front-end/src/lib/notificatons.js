@@ -1,6 +1,6 @@
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
-const SUCCESS = (message) => toast.success(message);
-const ERROR = (message) => toast.error(message);
+// const SUCCESS = (message) => toast.success(message);
+// const ERROR = (message) => toast.error(message);
 
-export const NOTIFY = { SUCCESS, ERROR };
+// export const NOTIFY = { SUCCESS, ERROR };

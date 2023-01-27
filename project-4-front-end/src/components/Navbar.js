@@ -1,8 +1,12 @@
+import React from 'react';
+
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import { useNavigate, Link } from 'react-router-dom';
 // import { useAuthenticated } from '../hook/useAuthenticated';
 // import { AUTH } from '../lib/auth';
 // import '../styles/NavBar.scss';
+
+import '../styles/NavbarStyls.scss';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -15,61 +19,41 @@ export default function Navbar() {
   // };
 
   return (
-    <Box sx={{ flexgrow: 1 }}>
-      <AppBar position='static'>
-        <Toolbar variant='dense' className='Navbar'>
-          <Link to='/'>
-            <Typography
-              variant='h6'
-              color='inherit'
-              component='div'
-              sx={{ mr: 2 }}
-            >
-              Home Page
-            </Typography>
-          </Link>
-          <Link to='/usercards'>
-            <Typography
-              variant='h6'
-              color='inherit'
-              component='div'
-              sx={{ mr: 2 }}
-            >
-              User Made Cards
-            </Typography>
-          </Link>
-          <Link to='/templates'>
-            <Typography
-              variant='h6'
-              color='inherit'
-              component='div'
-              sx={{ mr: 2 }}
-            >
-              Templates
-            </Typography>
-          </Link>
-          <Link to='/usercards/create'>
-            <Typography
-              variant='h6'
-              color='inherit'
-              component='div'
-              sx={{ mr: 2 }}
-            >
-              Create Your Own card
-            </Typography>
-          </Link>
-
+    <div className='all-the-navbar'>
+      <Toolbar variant='dense' className='Navbar'>
+        <Link to='/'>
+          <Typography variant='h6' color='white' component='div' sx={{ mr: 2 }}>
+            Home Page
+          </Typography>
+        </Link>
+        <Link to='/usercards'>
+          <Typography variant='h6' color='white' component='div' sx={{ mr: 2 }}>
+            User Made Cards
+          </Typography>
+        </Link>
+        <Link to='/usercards/create'>
+          <Typography variant='h6' color='white' component='div' sx={{ mr: 2 }}>
+            Create Your Own card
+          </Typography>
+        </Link>
+        <div className='login'>
           <Link to='/auth/login/'>
             <Typography
               variant='h6'
               color='inherit'
               component='div'
-              sx={{ mr: 2, color: 'black' }}
+              sx={{ mr: 2, color: 'red' }}
             >
               Login
             </Typography>
           </Link>
-          {/* {AUTH.getPayload().isAdmin && (
+          <img
+            className='logo'
+            src='https://i.imgur.com/I0sqrlZ.png'
+            alt='logo'
+          />
+        </div>
+        {/* {AUTH.getPayload().isAdmin && (
             <>
               <Link to='/categories/edit'>
                 <Typography
@@ -93,7 +77,7 @@ export default function Navbar() {
               </Link>
             </>
           )} */}
-          {/* 
+        {/* 
           {isLoggedIn ? (
             <>
               <Link to='/products/create'>
@@ -151,8 +135,7 @@ export default function Navbar() {
               </Link>
             </>
           )} */}
-        </Toolbar>
-      </AppBar>
-    </Box>
+      </Toolbar>
+    </div>
   );
 }

@@ -1,5 +1,7 @@
+import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -21,7 +23,7 @@ function App() {
         <Route path='/auth/login/' element={<Login />} />
         <Route path='/usercards/create' element={<CreateUserCards />} />
       </Routes>
-      <ToastContainer></ToastContainer>
+      {/* <ToastContainer></ToastContainer> */}
     </Router>
   );
 }
