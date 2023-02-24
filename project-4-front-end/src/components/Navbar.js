@@ -9,7 +9,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import '../styles/NavbarStyls.scss';
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const [isLoggedIn, setIsLoggedIn] = useAuthenticated();
 
   // const logout = () => {
