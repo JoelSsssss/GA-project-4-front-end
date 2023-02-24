@@ -3,7 +3,6 @@ import React from 'react';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 
 import '../../styles/CreateUserCards.scss';
-import { green } from '@mui/material/colors';
 
 let backgroundCardImage = 'url(https://i.imgur.com/nr2mytl.png)';
 let textColor = 'black';
